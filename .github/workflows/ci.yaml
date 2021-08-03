@@ -10,10 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-    - name: Check formatting with Prettier
-      run: yarn format:check
-    - name: Check quality with ESLint
-      run: yarn lint
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Check formatting with Prettier
+        run: yarn format:check
+      - name: Check quality with ESLint
+        run: yarn lint
+      - name: Run tests with Jest
+        run: yarn test
